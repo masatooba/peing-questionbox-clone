@@ -3,7 +3,7 @@
   og: {
     title: "#{@user.name}(#{@user.nickname})",
     description: "質問です。「#{@message.body}」",
-    image: "https://#{request.subdomain}.#{request.domain}/message/get_image?id=#{@message.id}"
+    image: "https://#{request.base_url}/message/get_image?id=#{@message.id}"
  } %>
 
 <% content_for :style do %>
