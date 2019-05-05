@@ -4,7 +4,7 @@
   og: {
     title: "#{@user.name}(#{@user.nickname})",
     description: "質問箱です。「#{@message.body}」",
-    image: "#{request.domain}/message/get_image?id=#{@message.id}"
+    image: "#{request.subdomain}.#{request.domain}/message/get_image?id=#{@message.id}"
  } %>
 
 <% content_for :style do %>
