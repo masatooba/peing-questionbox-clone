@@ -1,6 +1,5 @@
 class BaseController < ApplicationController
   protect_from_forgery
-  helper_method :current_user
 
   def login_required
     if session[:user_id]
