@@ -1,9 +1,10 @@
-<% set_meta_tags title: "#{@user.name}(#{@user.nickname})",
+<% set_meta_tags site: ENV["APP_NAME"],
+    title: "#{@user.name}(#{@user.nickname})",
     description: "質問箱です。「#{@message.body}」",
   og: {
     title: "#{@user.name}(#{@user.nickname})",
     description: "質問箱です。「#{@message.body}」",
-    image: "#{request.domain}/get_image?id=#{@message.id}"
+    image: "#{request.domain}/message/get_image?id=#{@message.id}"
  } %>
 
 <% content_for :style do %>
