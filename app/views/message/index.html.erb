@@ -11,15 +11,16 @@
         <div class="message-margin"></div>
         <div class="message-type-no-answer message-type"><a href="/message/index">未解答</a></div>
         <div class="message-type-answer message-type"><a href="/message/after">解答済み</a></div>
-
-
     </div>
-    <% @messages.each do |message| %>
-        <div class="message-area">
-            <div class="message-time"><%= message.created_at.to_s(:human) %></div>
-            <a class="message-text" href="/message/add/<%= message.id %>"><%= message.body %></a>
-            <div class="message-util"></div>
-        </div>
+
+    <% if @message then %>
+      <% @messages.each do |message| %>
+          <div class="message-area">
+              <div class="message-time"><%= message.created_at.to_s(:human) %></div>
+              <a class="message-text" href="/message/add/<%= message.id %>"><%= message.body %></a>
+              <div class="message-util"></div>
+          </div>
+      <% end %>
     <% end %>
 
 <% content_for :navibar do %>
