@@ -10,6 +10,17 @@
 
     <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123733514-8"></script>
+    <% if ENV["GOOGLE_ANALYTICS"] then %>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', "<%= ENV["GOOGLE_ANALYTICS"] %>");
+    </script>
+    <% end %>
 
      <%= yield :style %>
      <%= yield :ogp %>
