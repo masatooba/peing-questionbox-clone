@@ -1,9 +1,9 @@
 <% set_meta_tags site: ENV["APP_NAME"],
     title: "#{@user.name}(#{@user.nickname})",
-    description: "質問箱です。「#{@message.body}」",
+    description: "質問です。「#{@message.body}」",
   og: {
     title: "#{@user.name}(#{@user.nickname})",
-    description: "質問箱です。「#{@message.body}」",
+    description: "質問です。「#{@message.body}」",
     image: "https://#{request.subdomain}.#{request.domain}/message/get_image?id=#{@message.id}"
  } %>
 
