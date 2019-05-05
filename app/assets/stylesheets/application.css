@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @charset "utf-8";
+ /* ===================================================================
+ CSS information
+
+  File Name  : default.css
+  Author     : MIYA
+  Style Info : �u���E�U�X�^�C���̃��Z�b�g�Ɗ�{�ݒ�
+  http://www.css-lecture.com/log/css-beginner/040.html
+ =================================================================== */
+
+ /* ----------------------- Browser Default Initialization */
+ html {
+     overflow-x: hidden;
+ }
+
+ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+     margin: 0;
+     padding: 0;
+     --margin-top-multiplier: 0;
+ }
+
+ address, caption, cite, code, dfn, em, strong, th, var {
+     font-style: normal;
+ }
+
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+ }
+
+ caption, th {
+     text-align: left;
+ }
+
+ q:before, q:after {
+     content: '';
+ }
+
+ object, embed {
+     vertical-align: top;
+ }
+
+ hr, legend {
+     display: none;
+ }
+
+ h1, h2, h3, h4, h5, h6 {
+     /* 	font-size: 100%; */
+ }
+
+ abbr, acronym, fieldset {
+     border: 0;
+     vertical-align: bottom;
+ }
+
+ img {
+     border: 0;
+     vertical-align: bottom;
+ }
+
+ li {
+     list-style-type: none;
+ }
+
+ #flash-message {
+   text-align: center;
+   background-color: rgb(86, 200, 249);
+   color: white;
+   font-weight: bold;
+   height: 40px;
+   line-height: 40px;
+   opacity: 0.9;
+ }
+
+ /* ----------------------- Basic Style */
+ /* ------------ Font Style */

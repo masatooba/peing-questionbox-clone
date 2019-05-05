@@ -1,0 +1,16 @@
+defaults: &defaults
+
+development:
+  <<: *defaults
+  twitter:
+    consumer_key: "CSsZaPzrs0GoJOsz5RriDtMMQ"
+    consumer_secret: "v6DLzYPHmNvuZyw0lrxGVWlbitxf6khZAL17vGVe02MdhmIUZo"
+  tweet_setting:
+    text: "ただ今の時間は%sです" # つぶやき文言
+    follow_target_name: 'hilotter' # フォローしたいアカウント名
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

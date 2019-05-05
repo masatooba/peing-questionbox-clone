@@ -1,0 +1,26 @@
+<div class="title">@<%= @user.nickname %>さんに届いたメッセージ<br/></div>
+<div class="message-type-area">
+    <div class="message-margin"></div>
+    <div class="message-type-answer message-type">
+      <%= form_tag('/home/change_before', :method => :post) do %>
+        <button type="submit" name="button">未解答</button>
+      <% end %>
+    </div>
+    <div class="message-type-no-answer message-type">
+      <%= form_tag('/home/change_after', :method => :post) do %>
+          <button type="submit" name="button">解答済み</button>
+      <% end %>
+    </div>
+</div>
+<% if messages != nil then %>
+  <% messages.each do |message| %>
+      <div class="message-area">
+          <div class="message-time"><%= message.created_at.to_s(:human) %></div>
+          <a class="message-text" href="/message/add/<%= message.id %>"><%= message.body %></a>
+          <div class="message-util"></div>
+      </div>
+  <% end %>
+<% else %>
+  <div class="title">解答済みはありません</div>
+
+<% end %>

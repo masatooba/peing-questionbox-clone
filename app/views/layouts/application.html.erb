@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <%= display_meta_tags(default_meta_tags) %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+     <%= yield :style %>
+     <%= yield :ogp %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header">
+          <div class="header-tittle">
+              <a href="/" class="header-tittle-color">yuryo-<%= ENV['APP_NAME'] %>-</a>
+          </div>
+      </div>
+      <% if flash[:notice] then %>
+      <div id="flash-message">
+        <%= flash[:notice] %>
+      </div>
+      <% end %>
+        <%= yield %>
+      <div class="footer">
+          <div class="footer-links">
+              <a href="/home/about" class="footer-link"><%= ENV['APP_NAME'] %>について</a>
+              <a href="/home/question" class="footer-link">よくある質問</a>
+              <a href="/home/guides" class="footer-link">利用規約</a><br/>
+              <a href="/home/privacy" class="footer-link">プライバシーポリシー</a>
+              <a href="/home/contact" class="footer-link">お問い合わせ</a>
+              <a href="/" class="footer-link">公式ツイッター</a>
+          </div>
+          <div class="footer-copy">Copyright &copy; replica.tokyo All Rights Reserved by <a href="https://seiyablog.org/">Seiya Takahashi</a></div>
+      </div>
+      <%= yield :navibar %>
+  </div>
+  <%= yield :script %>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).on('turbolinks:load', function() {
+      setTimeout(function(){
+        $("#flash-message").slideUp();
+      },3000);
+
+      $("#flash-message").click(function() {
+        $("#flash-message").slideUp();
+      });
+     });
+  </script>
+  </body>
+</html>

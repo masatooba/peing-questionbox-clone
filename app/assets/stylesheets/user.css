@@ -1,0 +1,71 @@
+.dis-user {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.fa-times {
+  font-size: 40px;
+  text-align: right;
+  float: right;
+  padding: 25px;
+  color: gray;
+}
+
+.dis-user-title {
+  text-align: center;
+  padding-top: 180px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.dis-user-sub-title {
+  text-align: center;
+  color: gray;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.dis-user-input {
+  max-width: 600px !important;
+  width: 80% !important;
+  margin: 0 auto;
+}
+
+.dis-user-button {
+  margin: 0 auto !important;
+  text-align: center;
+}
+
+.dis-form {
+  width: 100%;
+}
+
+.question-message {
+    width: 70%;
+    height: 150px;
+    border: solid 4px rgb( 245, 182, 145);
+    border-radius: 20px;
+    font-size: 16px;
+    padding: 15px;
+    margin: 0 15%;
+}
+
+.profile-margin {
+  margin-top: 80px;
+}
+
+.fa-angle-double-up {
+  font-size: 40px;
+  text-align: center;
+  color: gray;
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 20px;
+}

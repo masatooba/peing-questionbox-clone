@@ -1,0 +1,78 @@
+<% set_meta_tags title: "#{@user.name}(#{@user.nickname})",
+    description: "質問箱です。「#{@message.body}」",
+  og: {
+    title: "#{@user.name}(#{@user.nickname})",
+    description: "質問箱です。「#{@message.body}」",
+    image: "#{request.domain}/get_image?id=#{@message.id}"
+ } %>
+
+<% content_for :style do %>
+  <%= stylesheet_link_tag "default" %>
+  <%= stylesheet_link_tag "home" %>
+  <%= stylesheet_link_tag "message" %>
+  <%= stylesheet_link_tag "nvibar" %>
+  <%= stylesheet_link_tag "userHome" %>
+<% end %>
+
+
+<div class="wrapper">
+    <div class="name"><a href="/<%= @user.nickname %>">@<%= @user.nickname %></a>さんの質問箱</div>
+    <div class="message-image">
+      <%= image_tag(url_for(:action => 'get_image', :id => @message.id)) %>
+    </div>
+
+    <% if @message.response_body then %>
+      <div class="profile">
+          <div class="profile-tittle"></div>
+          <div class="icon">
+              <%= image_tag(@user.image, :class => "icon-image") %>
+          </div>
+          <div class="profile-tittle">@<%= @user.nickname %>さんの回答</div>
+          <div class="profile-tittle"><%= @message.response_body %></div>
+      </div>
+    <% else %>
+    <!-- # ここから質問フォーム -->
+    <%# 本人だった場合のみ解答できる %>
+      <% if session[:user_id] == @user.id then %>
+          <div class="answer">質問に回答しよう</div>
+          <div id="answer-message">
+            <%= form_tag('/message/answer', :method => :post) do %>
+              <input type="hidden" name="message_id" value="<%= @message.id %>">
+              <textarea maxlength="100" required="required" name="body" class="answer-message"></textarea>
+              <div class="answer-count" id="answer-count">100/100</div>
+              <button name="type" value="link" type="submit" data-disable-with="送信中" class="answer-button">回答をする</button>
+            <% end %>
+        <% end %>
+    </div>
+
+    <!-- # ここまで質問フォーム -->
+    <% end %>
+
+    <% content_for :navibar do %>
+        <div class="nvi-bar-fixed">
+            <div class="nvi-bar-icon"><a href="/"><%= image_tag("home_off.png", :class => "nvi-bar-icon-img") %></a></div>
+            <div class="nvi-bar-icon"><a href="/message/index"><%= image_tag("message_on.png", :class => "nvi-bar-icon-img") %></a></div>
+            <div class="nvi-bar-icon"><a href="/setting/index"><%= image_tag("setting_off.png", :class => "nvi-bar-icon-img") %></a></div>
+        </div>
+    <% end %>
+
+
+
+    <div class="mail-icon">
+        <img width="50%" src="https://qubox.org/img/mail_icon.png">
+    </div>
+
+    <div class="decision">
+      <div class="question-title">匿名で質問ができます</div>
+      <div class="question-title-sub">※この質問は匿名で送信されます</div>
+      <div class="pt-2"></div>
+      <%= form_tag('/message/create', :method => :post) do %>
+        <input type="hidden" value="<%= @user.id %>" name="user_id">
+        <textarea name="body" class="question-message" required=""></textarea>
+        <div class="question-caution">
+          <a href="/home/guides">利用規約</a> <a href="/home/privacy">プライバシーポリシー</a> に同意の上で利用してください
+        </div>
+        <button name="button" type="submit" class="question-button" data-disable-with="送信中">質問を送る</button>
+      <% end %>
+    </div>
+</div>

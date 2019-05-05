@@ -1,0 +1,89 @@
+<% set_meta_tags title: "#{@user.name}(#{@user.nickname})",
+    description: "#{@user.name}さんの質問箱です。#{ENV["DESCRIPTION"]}",
+  og: {
+    title: "#{@user.name}(#{@user.nickname})",
+    description: "#{@user.name}さんの質問箱です。#{ENV["DESCRIPTION"]}",
+ } %>
+
+
+<% content_for :style do %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <%= stylesheet_link_tag "home" %>
+  <%= stylesheet_link_tag "userHome" %>
+  <%= stylesheet_link_tag "nvibar" %>
+<% end %>
+  <% if session[:user_id] == @user.id then %>
+    <div class="box-message">
+      これはあなたの<%= ENV["APP_NAME"] %>です。<br/>
+      <%= ENV["APP_NAME"] %>を確認しよう！！！
+
+    </div>
+  <% else %>
+  <% end %>
+    <div class="profile">
+        <div class="profile-tittle">@<%= @user.nickname %>さんの<%= ENV["APP_NAME"] %></div>
+        <div class="icon">
+            <%= image_tag(@user.image, :class => "icon-image") %>
+        </div>
+    </div>
+    <div class="user-area">
+        <div class="user-name"><%= @user.name %></div>
+    </div>
+    <div class="user-info container">
+      <div class="user-info-main row">
+        <!-- user-info-mainで幅を70％ぐらいの中央寄せにする -->
+        <div class="user-info-integer col-6">
+          <!-- ディスられた数、反論した数を表示 -->
+          <div class="user-info-title">
+            未回答の数
+            <br>
+          <dis class="user-info-body"><%= @non_res %></dis>
+          </div>
+        </div>
+        <div class="user-info-integer col-6">
+          <!-- ディスられた数、反論した数を表示 -->
+          <div class="user-info-title">
+            質問された数
+            <br>
+          <dis class="user-info-body"><%= @user.messages.count %></dis>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="decision">
+      <div class="question-title">匿名で質問ができます</div>
+      <div class="question-title-sub">※この質問は匿名で送信されます</div>
+      <div class="pt-2"></div>
+      <%= form_tag('/message/create', :method => :post) do %>
+        <input type="hidden" value="<%= @user.id %>" name="user_id">
+        <textarea name="body" class="question-message" required=""></textarea>
+        <div class="question-caution">
+          <a href="/home/guides">利用規約</a> <a href="/home/privacy">プライバシーポリシー</a> に同意の上で利用してください
+        </div>
+        <button name="button" type="submit" class="question-button" data-disable-with="送信中">質問を送る</button>
+      <% end %>
+    </div>
+    <div class="pt-4"></div>
+    <br>
+    <%# 本人のユーザーではない場合は表示する %>
+    <% if session[:user_id] != @user.id %>
+      <% if session[:before_after] then %>
+        <%= render :partial => "before", :locals => { messages: @messages, user: @user } %>
+      <% else %>
+        <%= render :partial => "after", :locals => { messages: @messages, user: @user } %>
+      <% end %>
+    <% end %>
+
+
+<% content_for :navibar do %>
+    <div class="nvi-bar-fixed">
+        <div class="nvi-bar-icon"><a href="/"><%= image_tag("home_on.png", :class => "nvi-bar-icon-img") %></a></div>
+        <div class="nvi-bar-icon"><a href="/message/index"><%= image_tag("message_off.png", :class => "nvi-bar-icon-img") %></a></div>
+        <div class="nvi-bar-icon"><a href="/setting/index"><%= image_tag("setting_off.png", :class => "nvi-bar-icon-img") %></a></div>
+    </div>
+<% end %>
+<% content_for :script do %>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<% end %>

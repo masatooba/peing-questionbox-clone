@@ -1,0 +1,100 @@
+.profile {
+    width: auto;
+    background-color: rgb( 245, 182, 145);
+    padding-bottom: 10px;
+}
+
+.profile-tittle {
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+.icon {
+    padding-bottom: 15px;
+    text-align: center;
+    height: 100px;
+}
+
+
+
+.icon-image {
+    height: 100px;
+    width: 100px;
+    border-radius: 999em;
+}
+
+.user-area {
+    height: 70px;
+}
+
+.user-name {
+    padding: 20px;
+    text-align: center;
+}
+
+.box-message {
+    margin: 20px 10%;
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    border: solid 1px #ababab;
+}
+
+.question-title {
+    text-align: center;
+    font-size: 20px;
+}
+
+.question-title-sub {
+    text-align: center;
+    font-size: 15px;
+    color: darkgray;
+}
+
+
+.question-caution {
+    text-align: center;
+    width: 70%;
+    margin: 0 15%;
+}
+
+.question-button {
+    width: 50%;
+    padding: 5px 0;
+    margin: 20px 25%;
+    text-align: center;
+    font-size: 20px;
+    border: solid 2px rgb( 245, 182, 145);
+    color: #575757;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.user-info {
+  width: 100%;
+  height: 100px;
+}
+
+.user-info-main {
+  width: 80%;
+  padding: 10px 0px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+.user-info-title {
+  font-size: 15px;
+  text-align: center;
+  color: gray;
+}
+
+.user-info-body {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  color: black;
+}

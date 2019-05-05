@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* ===================================================================
+CSS information
+
+ File Name  : default.css
+ Author     : MIYA
+ Style Info : �u���E�U�X�^�C���̃��Z�b�g�Ɗ�{�ݒ�
+ http://www.css-lecture.com/log/css-beginner/040.html
+=================================================================== */
+
+/* ----------------------- Browser Default Initialization */
+html {
+    overflow-x: hidden;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    --margin-top-multiplier: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th {
+    text-align: left;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+object, embed {
+    vertical-align: top;
+}
+
+hr, legend {
+    display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* 	font-size: 100%; */
+}
+
+abbr, acronym, fieldset {
+    border: 0;
+    vertical-align: bottom;
+}
+
+img {
+    border: 0;
+    vertical-align: bottom;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* ----------------------- Basic Style */
+/* ------------ Font Style */

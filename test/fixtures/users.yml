@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nickname: MyString
+  image: MyString
+  token: MyString
+  secret: MyString
+  dis_count: 1
+  response_count: 1
+
+two:
+  name: MyString
+  nickname: MyString
+  image: MyString
+  token: MyString
+  secret: MyString
+  dis_count: 1
+  response_count: 1

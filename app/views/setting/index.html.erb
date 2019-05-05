@@ -1,0 +1,36 @@
+
+
+<% content_for :style do %>
+  <%= stylesheet_link_tag "home" %>
+  <%= stylesheet_link_tag "option" %>
+  <%= stylesheet_link_tag "nvibar" %>
+  <%= stylesheet_link_tag "switch-button" %>
+<% end %>
+
+    <div class="user-name">
+      @<%= @user.nickname %>さんの設定画面</div>
+      </form>
+    <div class="logout-button"><a href="/sessions/destroy">ログアウト</a></div>
+    <div class="setting-area">
+      <%= form_tag('/setting/change', :method => :post) do %>
+          <div class="setting-label">表示名</div>
+          <input class="setting-name-text" type="text" name="user_name" value="<%= @user.name %>" maxlength="45" data-kwimpalastatus="alive" data-kwimpalaid="1556869291997-2">
+          <button type="submit" class="setting-button" data-disable-with="送信中">決定</button>
+      <% end %>
+      <%= form_tag('/home/tweet', :method => :post) do %>
+        <button name="type" value="tweet" type="submit" class="setting-button" style="width: 60%;margin: 30px 20%;">
+          twitterで質問を募集する
+        </button>
+      <% end %>
+
+    </div>
+    <%= form_tag('/setting/destroy', :method => :post) do %>
+      <button name="type" type="submit" class="setting-button" data-disable-with="送信中">退会する</button>
+    <% end %>
+<% content_for :navibar do %>
+    <div class="nvi-bar-fixed">
+        <div class="nvi-bar-icon"><a href="/"><%= image_tag("home_off.png", :class => "nvi-bar-icon-img") %></a></div>
+        <div class="nvi-bar-icon"><a href="/message/index"><%= image_tag("message_off.png", :class => "nvi-bar-icon-img") %></a></div>
+        <div class="nvi-bar-icon"><a href="/setting/index"><%= image_tag("setting_on.png", :class => "nvi-bar-icon-img") %></a></div>
+    </div>
+<% end %>
