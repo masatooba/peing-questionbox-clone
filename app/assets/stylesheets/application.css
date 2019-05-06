@@ -32,6 +32,7 @@
      margin: 0;
      padding: 0;
      --margin-top-multiplier: 0;
+     font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
  }
 
  address, caption, cite, code, dfn, em, strong, th, var {
