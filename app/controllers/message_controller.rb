@@ -29,7 +29,7 @@ class MessageController < BaseController
       @message.response_body = params[:body]
       if @message.save then
         @user = User.find(session[:user_id])
-        text = "#{@message.response_body}\n\n##{ENV["APP_NAME_EN"]} ##{ENV["APP_NAME"]}\n#{request.domain}/message/add/#{@message.id}"
+        text = "#{@message.response_body}\n\n##{ENV["APP_NAME_EN"]} ##{ENV["APP_NAME"]}\n#{request.base_url}/message/add/#{@message.id}"
         twitter_client(@user).update(text)
 
         #投稿の内容と投稿のurlをツイートをする

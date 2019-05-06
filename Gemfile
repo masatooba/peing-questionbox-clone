@@ -43,9 +43,11 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'mini_magick'
 
+gem 'meta-tags'
+
 gem "jquery-rails"
 
-gem 'meta-tags'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

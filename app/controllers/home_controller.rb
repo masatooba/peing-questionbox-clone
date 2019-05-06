@@ -13,7 +13,7 @@ class HomeController < BaseController
   # 定型文をつぶやく
   def tweet
     @user = User.find(session[:user_id])
-    text = "#{@user.name}(#{@user.nickname})さんの#{ENV["APP_NAME"]}です。\n\n##{ENV["APP_NAME_EN"]} ##{ENV["APP_NAME"]}\n#{request.domain}/#{@user.nickname}"
+    text = "#{@user.name}(#{@user.nickname})さんの#{ENV["APP_NAME"]}です。\n\n##{ENV["APP_NAME_EN"]} ##{ENV["APP_NAME"]}\n#{request.base_url}/#{@user.nickname}"
     twitter_client(@user).update(text)
     flash[:notice] = "ツイートが完了しました。"
     redirect_to root_path

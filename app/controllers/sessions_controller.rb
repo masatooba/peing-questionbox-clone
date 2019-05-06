@@ -15,7 +15,7 @@ class SessionsController < BaseController
       @user.secret = auth['credentials']['secret']
       @user.save
       # ツイートをする
-      text = "#{@user.name}(#{@user.nickname})さんの#{ENV["APP_NAME"]}です。\n\n##{ENV["APP_NAME_EN"]} ##{ENV["APP_NAME"]}\n#{request.domain}/#{@user.nickname}"
+      text = "#{@user.name}(#{@user.nickname})さんの#{ENV["APP_NAME"]}です。\n\n##{ENV["APP_NAME_EN"]} ##{ENV["APP_NAME"]}\n#{request.base_url}/#{@user.nickname}"
       twitter_client(@user).update(text)
       # twitter_client(@user).follow(ENV["CURRENT"].to_s)
       flash[:notice] = "登録が完了しました"
