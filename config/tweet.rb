@@ -1,4 +1,4 @@
 Twitter.configure do |config|
-  config.consumer_key       = "CSsZaPzrs0GoJOsz5RriDtMMQ"
-  config.consumer_secret    = "v6DLzYPHmNvuZyw0lrxGVWlbitxf6khZAL17vGVe02MdhmIUZo"
+  config.consumer_key       = ENV["API_KEY"]
+  config.consumer_secret    = ENV["API_SECRET"]
 end
