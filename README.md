@@ -1,24 +1,32 @@
-# README
+# peing-質問箱-のクローン(OSS)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+みなさん[peing-質問箱-](https://peing.net/)をご存知ですか?twitterで2017年ごろから流行っている匿名で質問ができるwebサービスのことです。このサービスは個人開発をしているせせり氏が開発したサービスで公開１ヶ月で1億アクセスに達したそうです。
 
-Things you may want to cover:
+匿名で質問できるという機能はとても面白いと思いました。なのでこれをオープンソース化して、もっといろんな機能をつけていきたいと考えています。
 
-* Ruby version
+___
 
-* System dependencies
+### デプロイ deploy
+誰でもカンタンにデプロイできるようにしましたので是非みなさんもお使いください。
+まずはgitからファイルをダウンロードしてください。
+``` git clone git@github.com:seiyatakahashi/peing-questionbox-clone.git ```
 
-* Configuration
+ダウンロードができたらダウンロードしてきたフォルダに移動する
+``` cd peing-questionbox-clone ```
 
-* Database creation
+herokuにログインをする
+``` heroku login ```
 
-* Database initialization
+heorku でプロジェクトを作成する
+``` heroku create```
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+___
 
-* Deployment instructions
-
-* ...
+### 今後つけたい機能
+##### 決済機能
+質問したい人がお金を払って質問された人がお金をもらえる機能。
+##### 複数のSNSログイン
+現在twitterでのログインしかできなのでfacebookやlineなどを加えたいです。
+##### ネイティブアプリ化
+railsをapi化させて、iosやandroidのようなネイティブなアプリケーションを作りたいです。
