@@ -43,7 +43,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'mini_magick'
 
-gem 'meta-tags'
+o
 
 gem "jquery-rails"
 
