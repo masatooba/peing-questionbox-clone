@@ -42,14 +42,23 @@ heorku にアップロード
 環境変数の設定
 
 ```  heroku config:set APP_NAME="アプリの名前"```
+
 ```  heroku config:set APP_NAME_EN="アプリの英語の表記名"```
+
 ```  heroku config:set API_KEY="ツイッターのAPI KEY"```
+
 ```  heroku config:set API_SECRET="ツイッターのAPI シークレット"```
+
 ```  heroku config:set TOKEN="ツイッターのAccess token"```
+
 ```  heroku config:set SECRET="ツイッターのaccess token secret"```
+
 ```  heroku config:set CURRENT="自分ののツイッターのID"```
+
 ```  heroku config:set DESCRIPTION="サイトの情報"```
+
 ```  heroku config:set KEYWORDS="サイトのキーワード"```
+
 ```  heroku config:set GOOGLE_ANALYTICS="Google アナリティクスのID"```
 
 
