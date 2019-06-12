@@ -75,6 +75,7 @@ railsをapi化させて、iosやandroidのようなネイティブなアプリ�
 
 ## 参考
 cssのデザインはほとんど、こちらのソースコードを使用しております。
+
 ・qiita: 質問箱をOSSにしてみた
 https://qiita.com/Syo_pr/items/2aa7e5e34726fae30b29
 
